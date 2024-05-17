@@ -1,0 +1,10 @@
+function [encoded_stream] = FEC_code(binary_stream, K, N)
+%UNTITLED2 Summary of this function goes here
+%   Detailed explanation goes here
+    polys = [7]
+    trellis = poly2trellis();
+
+
+    encoded_stream = binary_stream;
+
+end
