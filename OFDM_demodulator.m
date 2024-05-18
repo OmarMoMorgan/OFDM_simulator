@@ -14,6 +14,7 @@ n = n * 4/3;
 
 ychan = ychan(1:n+CycPref * n/SC);
 
+
 % Note need to adjust the dimensions after conv
 X_Recieved = reshape(ychan,SC+CycPref,[]);
 
