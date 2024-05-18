@@ -1,0 +1,35 @@
+function [TX_signal] = Modulator(Symbols)
+% modulation part of the OFDM
+
+% standard paramters
+data_subcarriers = 48;
+null_subcarriers = 12;
+pilot_subcarriers = 4;
+CycPref = 16;
+
+n_Symbols = length(Symbols);
+
+SymParallel = reshape(Symbols,data_subcarriers,[]);
+
+
+% set pilots
+
+% set Nulls
+SymParallel = insert_zeros(SymParallel,1,0,1);
+SymParallel = insert_zeros(SymParallel,7,1,1);
+
+
+
+A = [1 2 3; 4 5 6; 7 8 9]; % Existing matrix
+newRow = [10 11 12]; % New row to insert
+position = 2; % Position to insert the new row
+
+% Insert new row at the specified position
+A = [A(1:position-1, :); newRow; A(position:end, :)];
+
+
+
+
+
+
+end
