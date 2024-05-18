@@ -4,7 +4,7 @@ function [signal_equalized_zero , signal_equalized_wiener] = OFDM_demodulator(Cy
 %cycPref is the number of samples for Cyclic prefix
 %n is the number of symbols that you sent (in an actual world this could be changed a little bit)
 %pilot_value is the value of the pilot here I am assuming it is a single
-%value 
+%value no you should pass it as an array of all the values in it 
 %pilots_index is the indices of where are the pilots
 %SNR is the signal to noise ratio
 
@@ -28,7 +28,7 @@ y_parrallel = fft(X_Recieved);
 
 
 %gains_zero = y_parrallel(pilots_index,1:2:end)./pilot_value;
-gains_zero = y_parrallel(pilots_index,1:end)./pilot_value;
+gains_zero = y_parrallel(pilots_index,1:end)./pilot_value';
 
 interptime_real = interpolate(pilots_index,real(gains_zero),SC,n/SC);
 interptime_imag = interpolate(pilots_index,imag(gains_zero),SC,n/SC);
