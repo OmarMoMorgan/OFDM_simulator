@@ -11,9 +11,20 @@ for i=1:length(clipped)
 end
 
 filterOrder = 64;
-normalizedCutoffFreq = 0.8;
+normalizedCutoffFreq = 0.999999;
 h = fir1(filterOrder, normalizedCutoffFreq);
 filteredSignal = filter(h, 1, clipped);
 
 
+
+
+
+
+
+
+
+
+
+
+filteredSignal = clipped;
 end
